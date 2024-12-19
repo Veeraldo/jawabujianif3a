@@ -23,13 +23,13 @@
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
-                <th>No. Peminjaman</th>
+                <th>No. Pinjam</th>
                 <th>ID Anggota</th>
                 <th>ID Buku</th>
                 <th>Tanggal Pinjam</th>
                 <th>Tanggal Kembali</th>
                 <th>Denda</th>
-                <th>Aksi</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -40,13 +40,13 @@
                     <td>{{ $detail->buku->ID_Buku }}</td>
                     <td>{{ $detail->Tgl_Pinjam }}</td>
                     <td>{{ $detail->Tgl_Kembali ?? 'Belum Kembali' }}</td>
-                    <td>{{ $detail->Denda }}</td>
+                    <td>Rp. {{ number_format($detail->Denda, 0, ',', '.') }}</td>
                     <td>
                         <a href="{{ route('detailpinjam.edit', $detail->No_Pinjam) }}" class="btn btn-warning btn-sm">Edit</a>
                         <form action="{{ route('detailpinjam.destroy', $detail->No_Pinjam) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Hapus</button>
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah yakin ingin menghapus data ini?')">Hapus</button>
                         </form>
                     </td>
                 </tr>

@@ -13,8 +13,7 @@
 
     <form action="{{ route('detailpinjam.store') }}" method="POST">
         @csrf
-    
-        <div class="mb-3">
+<div class="mb-3">
             <label for="No_Pinjam" class="form-label">No Peminjaman</label>
             <input type="text" name="No_Pinjam" id="No_Pinjam" class="form-control @error('No_Pinjam') is-invalid @enderror" value="{{ old('No_Pinjam') }}">
             @error('No_Pinjam')
@@ -52,22 +51,6 @@
             <label for="Tgl_Pinjam" class="form-label">Tanggal Pinjam</label>
             <input type="date" name="Tgl_Pinjam" id="Tgl_Pinjam" class="form-control @error('Tgl_Pinjam') is-invalid @enderror" value="{{ old('Tgl_Pinjam') }}">
             @error('Tgl_Pinjam')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
-    
-        <div class="mb-3">
-            <label for="Tgl_Kembali" class="form-label">Tanggal Kembali</label>
-            <input type="date" name="Tgl_Kembali" id="Tgl_Kembali" class="form-control @error('Tgl_Kembali') is-invalid @enderror" value="{{ old('Tgl_Kembali') }}">
-            @error('Tgl_Kembali')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
-    
-        <div class="mb-3">
-            <label for="Denda" class="form-label">Denda</label>
-            <input type="number" name="Denda" id="Denda" class="form-control @error('Denda') is-invalid @enderror" value="{{ old('Denda') }}">
-            @error('Denda')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>
